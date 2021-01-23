@@ -21,7 +21,7 @@ def excludes(subject, test):
             return False
     return True
 
-def create_subjects():
+def subjects():
     for number in range(0, 1000):
         subject = str(number)
         if len(subject) != 3:
@@ -30,9 +30,8 @@ def create_subjects():
 
 
 if __name__ == "__main__":
-    subjects = create_subjects()
     possible_numbers = []
-    for subject in subjects:
+    for subject in subjects():
         possible = correct_and_well_placed(subject, "682", 1)
         possible = possible and contains_but_wrong_position(subject, "614", 1)
         possible = possible and contains_but_wrong_position(subject, "206", 2)
